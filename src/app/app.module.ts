@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule} from '@angular/common/http';
+
+import { NgbModule ,NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
@@ -25,6 +28,12 @@ import {
 import { WebService } from './web.service';
 import { AuthService } from './auth.service';
 import { DraggableModule } from './draggable/draggable.module';
+
+import { LocationsComponent } from './locations/locations.component';
+import { AddLocationComponent } from './add-location-information/add-location.component';
+import { AddLocationInformation } from './add-location-information/add-location.component';
+import { ViewLocationInformation } from './add-location-information/view-location-information.component';
+
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -66,6 +75,10 @@ const routes = [
     path: 'login',
     component: AdministrationComponent
   },
+  {
+    path: 'location',
+    component: LocationsComponent
+  }
 
 ];
 
@@ -86,6 +99,10 @@ const routes = [
     WarningPopupComponent,
     EditReleaseFormComponent,
     AdministrationComponent,
+	LocationsComponent,
+	AddLocationComponent,
+	AddLocationInformation,
+	ViewLocationInformation,
   ],
   imports: [
     BrowserModule,
@@ -115,9 +132,9 @@ const routes = [
     RouterModule.forRoot(routes),
     DraggableModule,
   ],
-  providers: [ WebService, AuthService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'} ],
+  providers: [ WebService, AuthService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},NgbActiveModal ],
   bootstrap: [ AppComponent ],
-  entryComponents: [ ReleaseInformationComponent, WarningPopupComponent ]
+  entryComponents: [ ReleaseInformationComponent, WarningPopupComponent,AddLocationInformation,ViewLocationInformation]
 })
 export class AppModule {
 
