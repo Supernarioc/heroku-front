@@ -29,7 +29,6 @@ import { WebService } from './web.service';
 import { AuthService } from './auth.service';
 import { DraggableModule } from './draggable/draggable.module';
 
-import { LocationsComponent } from './locations/locations.component';
 import { AddLocationComponent } from './add-location-information/add-location.component';
 import { AddLocationInformation } from './add-location-information/add-location.component';
 import { ViewLocationInformation } from './add-location-information/view-location-information.component';
@@ -77,7 +76,7 @@ const routes = [
   },
   {
     path: 'location',
-    component: LocationsComponent
+    component: AddLocationComponent
   }
 
 ];
@@ -99,7 +98,6 @@ const routes = [
     WarningPopupComponent,
     EditReleaseFormComponent,
     AdministrationComponent,
-	LocationsComponent,
 	AddLocationComponent,
 	AddLocationInformation,
 	ViewLocationInformation,

@@ -4,14 +4,37 @@ import {Subject} from 'rxjs';
 import {Change, FullRelease, Release, TruckRounds, Trucks} from './interfaces';
 
 // Constant that defines where the REST API is located
-const SERVER_URL = 'https://demo-recur-api.herokuapp.com/api';
+const SERVER_URL = 'https://heroku-backnd.herokuapp.com/api';
 
 @Injectable()
 export class WebService {
 
   // Stores the current loaded day on the planning page
   private currentDay: string;
+  locationstore: LOCATIONS={locations: []};
 
+    getLocation(){
+	  this.httpClient.get<Location[]>(SERVER_URL + 'Alllocations').subscribe((res)=>{
+		 console.log(res);
+		 this.locationstore.locations = res;
+	  });
+  }
+  //Method that will add new location to the database 
+  addLocation(data: Location){
+	  this.httpClient.post(SERVER_URL + 'add_location',data);
+	  
+  }
+  //Method for delete location from database
+  deleteLocation(name:String){
+	this.httpClient.post(SERVER_URL+'delete_location',name);
+  }
+  //Method for update eidted information for a location
+  updateLocation(locationup:Location,name: String){
+	console.log(locationup+name);
+	this.httpClient.post(SERVER_URL+'update_location',name,);
+  }
+  
+  
   // Observable and subject for Rounds
   daysRounds : Trucks = {rounds: []};
   private roundsSubject = new Subject();
