@@ -52,6 +52,7 @@ export class AddLocationInformation implements AfterViewInit {
   //three types of the 
   types: string[] = ['Port', 'Yard'];
   type: string = '';
+  this.webService.getLocation;
   locationdata = this.webService.locationstore;
  
 
