@@ -91,7 +91,7 @@ export class AddLocationInformation implements AfterViewInit {
 @Component({
   selector: 'addlocationcomponent',
   templateUrl: './add-location.component.html',
-  styleUrls: ['../app.component.css']
+  styleUrls: ['../app.component.scss']
 })
 
 
