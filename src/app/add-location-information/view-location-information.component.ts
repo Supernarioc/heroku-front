@@ -74,8 +74,9 @@ export class ViewLocationInformation {
     let Address = this.inputAddress.nativeElement.value;
     let OpenTime = this.inputOpTime.nativeElement.value;
     let CloseTime = this.inputClTime.nativeElement.value;
+	let Require = this.require.nativeElement.checked;
     // update changed data to database
-	this.webService.updateLocation(new Location());
+	this.webService.updateLocation(new Location(Name,Address,OpenTime,CloseTime,this.inputtype,true),"query");
     this.activeModal.close('Close click');
   }
 

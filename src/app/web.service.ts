@@ -3,6 +3,9 @@ import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs';
 import {Change, FullRelease, Release, TruckRounds, Trucks} from './interfaces';
 
+import {LOCATIONS} from './add-location-information/location-list'
+import {Location} from './add-location-information/location'
+
 // Constant that defines where the REST API is located
 const SERVER_URL = 'https://heroku-backnd.herokuapp.com/api';
 
@@ -30,7 +33,7 @@ export class WebService {
   }
   //Method for update eidted information for a location
   updateLocation(locationup:Location,name: String){
-	console.log(locationup+name);
+	console.log(locationup+""+name);
 	this.httpClient.post(SERVER_URL+'update_location',name,);
   }
   
