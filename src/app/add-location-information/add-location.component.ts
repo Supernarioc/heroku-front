@@ -141,5 +141,6 @@ export class AddLocationComponent implements AfterViewInit {
   //get all the location from database
   
   //public locations = this.webService.locationstore;
-  public locations : Location[new Location["name","name","name","name","port",true]]; 
+  temp : new Location("name","name","name","name","port",true);
+  public locations : Location[temp,temp]; 
 }
