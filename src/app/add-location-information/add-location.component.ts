@@ -52,7 +52,7 @@ export class AddLocationInformation implements AfterViewInit {
   //three types of the 
   types: string[] = ['Port', 'Yard'];
   type: string = '';
-  locationdata = this.webService.getLocation;
+  //locationdata = this.webService.getLocation;
   //locationdata = this.webService.locationstore;
  
 
@@ -79,7 +79,8 @@ export class AddLocationInformation implements AfterViewInit {
 		alert("The location Address already exist");
 	} else{
 		//add to the database
-		this.webService.addLocation(new Location(Name, Address, OpenTime, CloseTime, this.inputtype,Require));
+		//this.webService.addLocation(new Location(Name, Address, OpenTime, CloseTime, this.inputtype,Require));
+		console.log(new Location(Name, Address, OpenTime, CloseTime, this.inputtype,Require));
 		this.activeModal.close('Close click');
 	}
   }
@@ -105,8 +106,8 @@ export class AddLocationComponent implements AfterViewInit {
   }
    ngOnInit(){
 	   //fetching data from database
-	   this.webService.getLocation();
-	   console.log(this.webService.locationstore);
+	   //this.webService.getLocation();
+	   //console.log(this.webService.locationstore);
    }
   constructor(private modalService: NgbModal,private webService:WebService) {
   }
@@ -127,7 +128,8 @@ export class AddLocationComponent implements AfterViewInit {
   deleteLocation(name){
 	  var confirmdelete=confirm("Are you sure to delete "+name+" location?");
 	if(confirmdelete){
-		this.webService.deleteLocation(name);
+		console.log(name);
+		//this.webService.deleteLocation(name);
 	}
   }
 
@@ -137,5 +139,7 @@ export class AddLocationComponent implements AfterViewInit {
     this.selectedlocation = lOcation;
   }
   //get all the location from database
-  public locations = this.webService.locationstore;
+  
+  //public locations = this.webService.locationstore;
+  public locations = Location[new Location{"name","address","opentime","closetime","port",true}];
 }
