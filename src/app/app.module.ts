@@ -101,6 +101,7 @@ const routes = [
 	AddLocationComponent,
 	AddLocationInformation,
 	ViewLocationInformation,
+	LocationComponent,
   ],
   imports: [
     BrowserModule,
