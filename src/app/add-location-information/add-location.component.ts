@@ -142,5 +142,5 @@ export class AddLocationComponent implements AfterViewInit {
   
   //public locations = this.webService.locationstore;
   public locations : Location[];
-  let locations[0] = new Location("name","address","opentime","closetime","port",true);
+  locations[0] : new Location("name","address","opentime","closetime","port",true);
 }
