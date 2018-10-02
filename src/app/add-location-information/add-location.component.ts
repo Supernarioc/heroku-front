@@ -54,7 +54,7 @@ export class AddLocationInformation implements AfterViewInit {
   type: string = '';
   //locationdata = this.webService.getLocation;
   //locationdata = this.webService.locationstore;
-  locationdata = Location[];
+  locationdata : Location[];
 
   ngAfterViewInit() {
   }
@@ -141,5 +141,6 @@ export class AddLocationComponent implements AfterViewInit {
   //get all the location from database
   
   //public locations = this.webService.locationstore;
-  public locations = Location[new Location("name","address","opentime","closetime","port",true)];
+  public locations : Location[];
+  locations[0] = new Location("name","address","opentime","closetime","port",true);
 }
