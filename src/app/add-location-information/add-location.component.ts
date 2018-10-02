@@ -54,7 +54,7 @@ export class AddLocationInformation implements AfterViewInit {
   type: string = '';
   //locationdata = this.webService.getLocation;
   //locationdata = this.webService.locationstore;
- 
+  locationdata = Location[];
 
   ngAfterViewInit() {
   }
