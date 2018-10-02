@@ -76,7 +76,7 @@ const routes = [
   },
   {
     path: 'location',
-    component: LocationComponent
+    component: AddLocationComponent
   }
 
 ];
