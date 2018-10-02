@@ -32,7 +32,7 @@ import { DraggableModule } from './draggable/draggable.module';
 import { AddLocationComponent } from './add-location-information/add-location.component';
 import { AddLocationInformation } from './add-location-information/add-location.component';
 import { ViewLocationInformation } from './add-location-information/view-location-information.component';
-import { LocationPage } from './add-location-information/location.component';
+import { LocationComponent } from './add-location-information/location.component';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -76,7 +76,7 @@ const routes = [
   },
   {
     path: 'location',
-    component: LocationPage
+    component: LocationComponent
   }
 
 ];
