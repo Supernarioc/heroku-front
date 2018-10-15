@@ -54,7 +54,7 @@ export class AddLocationInformation implements AfterViewInit {
   type: string = '';
   //locationdata = this.webService.getLocation;
   //locationdata = this.webService.locationstore;
-  locationdata : Location[];
+  locationdata : LOCATIONS[];
 
   ngAfterViewInit() {
   }
@@ -125,7 +125,7 @@ export class AddLocationComponent implements AfterViewInit {
   }
   //open up confirm dialog 
   //if confirmed action delete seleted location from database
-  deleteLocation(name){
+  deleteLocation(name){ 
 	  var confirmdelete=confirm("Are you sure to delete "+name+" location?");
 	if(confirmdelete){
 		console.log(name);
@@ -141,6 +141,10 @@ export class AddLocationComponent implements AfterViewInit {
   //get all the location from database
   
   //public locations = this.webService.locationstore;
-  temp : new Location("name","name","name","name","port",true);
-  public locations : Location[temp,temp]; 
+  //!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  //let temp = new Location("name","name","name","name","port",true);
+  public locations :Array<Location> =[{name:"name",address:"address",opentime:"000",closetime:"000",type:"port",require:true}]; 
+  //locations.subscribe(() => {
+		
+  //}
 }

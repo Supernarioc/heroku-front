@@ -52,7 +52,8 @@ export class ViewLocationInformation {
   @ViewChild('cltime') inputClTime: ElementRef;
   @ViewChild('require') require: ElementRef;
   //get all locations from database 
-  locationsdata = this.webService.locationstore;
+  //temploc = this.webService.locationstore;
+  temploc : LOCATIONS=[new Location("auckland","address","9","13","port",true)];
   
   constructor(public activeModal: NgbActiveModal,private webService: WebService) {
   }
@@ -60,13 +61,13 @@ export class ViewLocationInformation {
   types: string[] = ['Port', 'Yard'];
   type: string = '';
   //tempary variable for storing current selected location information
-  viewLocation = new Location(this.locationsdata[this.index].name,this.locationsdata[this.index].address,
-    this.locationsdata[this.index].opentime, this.locationsdata[this.index].closetime, this.locationsdata[this.index].type,this.locationsdata[this.index].require);
+  viewLocation = new Location(this.temploc[this.index].name,this.temploc[this.index].address,
+    this.temploc[this.index].opentime, this.temploc[this.index].closetime, this.temploc[this.index].type,this.temploc[this.index].require);
 
   //update changed data to local location variable 
   update(value) {
-    this.viewLocation = new Location(this.locationsdata[this.index].name, this.locationsdata[this.index].address,
-      this.locationsdata[this.index].opentime, this.locationsdata[this.index].closetime, this.locationsdata[this.index].type,this.locationsdata[this.index].require);
+    this.viewLocation = new Location(this.temploc[this.index].name, this.temploc[this.index].address,
+      this.temploc[this.index].opentime, this.temploc[this.index].closetime, this.temploc[this.index].type,this.temploc[this.index].require);
   }
 
   save() {

@@ -130,6 +130,7 @@ const routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     DraggableModule,
+	NgbModule.forRoot(),
   ],
   providers: [ WebService, AuthService, {provide: MAT_DATE_LOCALE, useValue: 'en-GB'},NgbActiveModal ],
   bootstrap: [ AppComponent ],
