@@ -67,22 +67,22 @@ export class AddLocationInformation implements AfterViewInit {
     let CloseTime = this.inputClTime.nativeElement.value;
 	let Require = this.require.nativeElement.checked;
 	//check if the location name or address exist in the database
-	for(var i=0;i<4;i++){
-		var checkName = this.locationdata[i].name==Name;
-		var checkAddress = this.locationdata[i].address==Address;
-		if(checkName||checkAddress){break;}
-	}
+	//for(var i=0;i<4;i++){
+	//	var checkName = this.locationdata[i].name==Name;
+	//	var checkAddress = this.locationdata[i].address==Address;
+	//	if(checkName||checkAddress){break;}
+	//}
 	
-	if(checkName){
-		alert("The location Name already exist");
-	} else if(checkAddress) {
-		alert("The location Address already exist");
-	} else{
+	//if(checkName){
+	//	alert("The location Name already exist");
+	//} else if(checkAddress) {
+	//	alert("The location Address already exist");
+	//} else{
 		//add to the database
 		//this.webService.addLocation(new Location(Name, Address, OpenTime, CloseTime, this.inputtype,Require));
 		console.log(new Location(Name, Address, OpenTime, CloseTime, this.inputtype,Require));
 		this.activeModal.close('Close click');
-	}
+	//}
   }
 //change the location type at add information popup menu
   change(value) {

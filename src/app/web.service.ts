@@ -15,6 +15,7 @@ export class WebService {
   // Stores the current loaded day on the planning page
   private currentDay: string;
   locationstore: LOCATIONS={locations: []};
+  
 
     getLocation(){
 	  this.httpClient.get<Location[]>(SERVER_URL + 'Alllocations').subscribe((res)=>{

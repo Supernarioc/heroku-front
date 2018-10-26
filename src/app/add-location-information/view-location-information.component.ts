@@ -53,7 +53,7 @@ export class ViewLocationInformation {
   @ViewChild('require') require: ElementRef;
   //get all locations from database 
   //temploc = this.webService.locationstore;
-  temploc: locations;
+  temploc: Array<Location> =[{name:"name",address:"address",opentime:"000",closetime:"000",type:"port",require:true}]; ;
   
   constructor(public activeModal: NgbActiveModal,private webService: WebService) {
   }
@@ -78,6 +78,7 @@ export class ViewLocationInformation {
     let CloseTime = this.inputClTime.nativeElement.value;
 	let Require = this.require.nativeElement.checked;
 	this.webService.updateLocation(new Location(Name,Address,OpenTime,CloseTime,this.inputtype,true),"query");
+	console.log(new Location(Name,Address,OpenTime,CloseTime,this.inputtype,Require));
     this.activeModal.close('Close click');
   }
 
