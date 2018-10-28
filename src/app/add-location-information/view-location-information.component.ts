@@ -53,8 +53,8 @@ export class ViewLocationInformation {
   @ViewChild('require') require: ElementRef;
   //get all locations from database 
   //temploc = this.webService.locationstore;
-  temploc: Array<Location> =[{name:"name",address:"address",opentime:"000",closetime:"000",type:"port",require:true}]; ;
-  
+  temploc: Array<Location> =[{name:"name",address:"address",opentime:"000",closetime:"000",type:"port",require:true}];
+  console.log(this.temploc);
   constructor(public activeModal: NgbActiveModal,private webService: WebService) {
   }
 

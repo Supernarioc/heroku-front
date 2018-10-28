@@ -14,13 +14,15 @@ export class WebService {
 
   // Stores the current loaded day on the planning page
   private currentDay: string;
-  locationstore: LOCATIONS={locations: []};
+  //locationstore: LOCATIONS={locations: []};
+  locationstore: Array<Location> =[];
+  locationsss = locationstore.asObservable();
   
 
     getLocation(){
 	  this.httpClient.get<Location[]>(SERVER_URL + 'Alllocations').subscribe((res)=>{
 		 console.log(res);
-		 this.locationstore.locations = res;
+		 //this.locationstore.locations = res;
 	  });
   }
   //Method that will add new location to the database 

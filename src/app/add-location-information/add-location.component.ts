@@ -55,7 +55,8 @@ export class AddLocationInformation implements AfterViewInit {
   //locationdata = this.webService.getLocation;
   //locationdata = this.webService.locationstore;
   locationdata : LOCATIONS[];
-
+  public locations :Array<Location> =[{name:"name",address:"address",opentime:"000",closetime:"000",type:"port",require:true}]; 
+  size = this.locations.length;
   ngAfterViewInit() {
   }
 
@@ -80,7 +81,8 @@ export class AddLocationInformation implements AfterViewInit {
 	//} else{
 		//add to the database
 		//this.webService.addLocation(new Location(Name, Address, OpenTime, CloseTime, this.inputtype,Require));
-		console.log(new Location(Name, Address, OpenTime, CloseTime, this.inputtype,Require));
+		this.locations.push(new Location(Name, Address, OpenTime, CloseTime, this.inputtype,Require));
+		console.log(this.locations);
 		this.activeModal.close('Close click');
 	//}
   }
@@ -141,10 +143,8 @@ export class AddLocationComponent implements AfterViewInit {
   //get all the location from database
   
   //public locations = this.webService.locationstore;
-  //!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  //let temp = new Location("name","name","name","name","port",true);
-  public locations :Array<Location> =[{name:"name",address:"address",opentime:"000",closetime:"000",type:"port",require:true}]; 
+ 
   //locations.subscribe(() => {
-		
+	public locations :Array<Location> =[{name:"name",address:"address",opentime:"000",closetime:"000",type:"port",require:true}]; 
   //}
 }
