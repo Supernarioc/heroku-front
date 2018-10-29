@@ -16,7 +16,7 @@ export class WebService {
   private currentDay: string;
   //locationstore: LOCATIONS={locations: []};
   locationstore: Array<Location> =[];
-  locationsss = locationstore.asObservable();
+  locationsss = this.locationstore.asObservable();
   
 
     getLocation(){
